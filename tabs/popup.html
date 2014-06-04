@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <title>DBS - Tab Tracker</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        min-width:500px;
+        font-family: 'Lato', sans-serif;
+      }
+      th{
+        background-color: #13a4d2;
+        color:white;
+        margin:0px;
+        padding:5px;
+        text-align: center;
+      }
+      table{
+        border-spacing:0px;
+        width:100%;
+      }
+      td{
+        padding:3px;
+        text-align: center;
+      }
+      .left{
+        text-align:left;
+      }
+
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
+     -->
+    
+  </head>
+  <body>
+    Show me: <a href='#' id='today'>Today</a> | <a href='#' id='yesterday'>Yesterday</a> | <a href='#' id='week'>Last 7 Days</a> | <a href='#' id='pause'>Pause Logging</a> 
+    <div id='info'></div>
+    <img style='padding-top:10px; float:right;' src='images/dbslogo.png'/><p style='float:left;' id='welcome'>Please login/register.</p>
+    <script src="jquery-2.1.1.min.js"></script>  
+    <script src="popup.js"></script>  
+  </body>
+</html>
+
