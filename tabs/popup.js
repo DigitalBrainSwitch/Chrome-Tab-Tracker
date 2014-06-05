@@ -14,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
   chrome.runtime.sendMessage({message: "pause status"}, function(response) {
     if(response.paused){
       $('#pause').css('background-image','url(images/resume.png)');
+       $('#welcome').html('LOGGING PAUSED');
+    }
+    else{
+      $('#pause').css('background-image','url(images/pause.png)');
     } 
   });          
 });
@@ -115,11 +119,13 @@ $( "#pause" ).on( "click", function() {
        chrome.runtime.sendMessage({message: "unpause"}, function(response) {});
       $('#pause').css('background-image','url(images/pause.png)');
       $('#pause').attr('title', 'Pause Logging');
+      $('#welcome').html('LOGGING RESUMED');
     } 
     else{
       chrome.runtime.sendMessage({message: "pause"}, function(response) {});
       $('#pause').css('background-image','url(images/resume.png)');
       $('#pause').attr('title', 'Resume Logging');
+      $('#welcome').html('LOGGING PAUSED');
     }
   });
 });
