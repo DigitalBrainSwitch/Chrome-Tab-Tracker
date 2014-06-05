@@ -51,7 +51,7 @@ function convertURL(url){
 //Called every time a session is closed.
 function postSession(session){
 	if(userID!=null && session['url']!=""){
-		$.post("http://localhost/wp-includes/chrome-extension/save.php", { user_id: userID, start: ISODateString(session['startTime']), end: ISODateString(session['endTime']), switches:session['switches'], time:session['activeTime'], url:session['url']}, function() {});
+		$.post("http://digitalbrain-test.lancs.ac.uk/wp-includes/chrome-extension/save.php", { user_id: userID, start: ISODateString(session['startTime']), end: ISODateString(session['endTime']), switches:session['switches'], time:session['activeTime'], url:session['url']}, function() {});
 	}
 }
 

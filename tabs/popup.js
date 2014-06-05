@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   chrome.runtime.sendMessage({message: "pause status"}, function(response) {
     if(response.paused){
-      $('#pause').html('Resume Logging');
+      $('#pause').css('background-image','url(images/resume.png)');
     } 
   });          
 });
@@ -31,7 +31,7 @@ function refreshCookie(){
       });
     }
     else{
-      $('#welcome').html('Please <a href="http://localhost">login/register</a>');
+      $('#welcome').html('Please <a href="http://digitalbrain-test.lancs.ac.uk/">login/register</a>');
       WP_UserID = null;
       WP_Username = null;
       chrome.runtime.sendMessage({message: "no cookie"}, function(response) {});
@@ -41,7 +41,7 @@ function refreshCookie(){
 
 //Calls get.php to return matching sessions for user and type (day/yesterday/week)
 function getSessions(type){
-  $.post("http://localhost/wp-includes/chrome-extension/get.php", {user_id: WP_UserID, type: type}, function(response) {
+  $.post("http://digitalbrain-test.lancs.ac.uk/wp-includes/chrome-extension/get.php", {user_id: WP_UserID, type: type}, function(response) {
       allSessions = JSON.parse(response);
       console.log(allSessions);
       mergeSessions();
@@ -113,11 +113,13 @@ $( "#pause" ).on( "click", function() {
     console.log(response.paused);
     if(response.paused){
        chrome.runtime.sendMessage({message: "unpause"}, function(response) {});
-      $('#pause').html('Pause Logging');
+      $('#pause').css('background-image','url(images/pause.png)');
+      $('#pause').attr('title', 'Pause Logging');
     } 
     else{
       chrome.runtime.sendMessage({message: "pause"}, function(response) {});
-      $('#pause').html('Resume Logging');
+      $('#pause').css('background-image','url(images/resume.png)');
+      $('#pause').attr('title', 'Resume Logging');
     }
   });
 });

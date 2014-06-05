@@ -8,6 +8,24 @@
         min-width:500px;
         font-family: 'Lato', sans-serif;
       }
+      #info{
+        margin-top:11px;
+      }
+      a{
+        background-color:#13a4d2;
+        color:white;
+        text-decoration: none;
+        padding:5px;
+        margin-right:5px;
+      }
+      a:hover{
+        background-color: #8fd3e9;
+        text-decoration: none;
+      }
+      tr:hover{
+        background-color: #8fd3e9;
+        color:white;
+      }
       th{
         background-color: #13a4d2;
         color:white;
@@ -18,6 +36,12 @@
       table{
         border-spacing:0px;
         width:100%;
+      }
+      #pause{
+        height:25px;
+        width:25px;
+        background-image:url('images/pause.png');
+        float:right;
       }
       td{
         padding:3px;
@@ -38,7 +62,7 @@
     
   </head>
   <body>
-    Show me: <a href='#' id='today'>Today</a> | <a href='#' id='yesterday'>Yesterday</a> | <a href='#' id='week'>Last 7 Days</a> | <a href='#' id='pause'>Pause Logging</a> 
+    <div href='#' id='pause' title='Pause Logging'></div> <a href='#' id='today'>Today</a>  <a href='#' id='yesterday'>Yesterday</a> <a href='#' id='week'>Last 7 Days</a>
     <div id='info'></div>
     <img style='padding-top:10px; float:right;' src='images/dbslogo.png'/><p style='float:left;' id='welcome'>Please login/register.</p>
     <script src="jquery-2.1.1.min.js"></script>  

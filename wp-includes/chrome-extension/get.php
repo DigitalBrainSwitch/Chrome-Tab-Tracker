@@ -1,6 +1,6 @@
 <?php 
 
-$con = mysql_connect("localhost","root","");
+$con = mysql_connect("digitalbrain-test.lancs.ac.uk","root","dbsproject2013");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
